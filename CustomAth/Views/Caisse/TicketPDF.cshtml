@@ -1,0 +1,77 @@
+@model CustomAth.Models.Ticket
+
+<style>
+    body {
+        width: 280px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 12px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .line {
+        border-top: 1px dashed black;
+        margin: 8px 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: 2px 0;
+    }
+
+    .tot {
+        font-weight: bold;
+        text-align: right;
+        margin-top: 10px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .thank {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 11px;
+        font-style: italic;
+    }
+</style>
+
+<h2>ESEN-HAMMI CAFÉ</h2>
+<div class="center">@Model.Date.ToString("dd/MM/yyyy HH:mm")</div>
+<div class="line"></div>
+
+<table>
+    <thead>
+    <tr>
+        <td><strong>Produit</strong></td>
+        <td><strong>Qte</strong></td>
+        <td><strong>P.U</strong></td>
+        <td><strong>P.T</strong></td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var ligne in Model.Lignes)
+    {
+        <tr>
+            <td>@ligne.NomProduit</td>
+            <td style="text-align:center;">@ligne.Quantite</td>
+            <td style="text-align:right;">@ligne.PrixUnitaire.ToString("0.000") DT</td>
+            <td style="text-align:right;">@ligne.PrixTotal.ToString("0.000") DT</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<div class="line"></div>
+<p class="tot">Total : @Model.Total.ToString("0.000") DT</p>
+<div class="thank">Merci pour votre visite !</div>

@@ -213,3 +213,5 @@
 /home/yassine-hammi/RiderProjects/CustomAth/CustomAth/obj/Debug/net9.0/CustomAth.pdb
 /home/yassine-hammi/RiderProjects/CustomAth/CustomAth/obj/Debug/net9.0/CustomAth.genruntimeconfig.cache
 /home/yassine-hammi/RiderProjects/CustomAth/CustomAth/obj/Debug/net9.0/ref/CustomAth.dll
+/home/yassine-hammi/RiderProjects/CustomAth/CustomAth/bin/Debug/net9.0/DinkToPdf.dll
+/home/yassine-hammi/RiderProjects/CustomAth/CustomAth/obj/Debug/net9.0/CustomAth.sourcelink.json

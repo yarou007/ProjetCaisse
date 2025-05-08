@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CustomAth")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa41df0ed2be95ead3269bf74114da40b6df5907")]
 [assembly: System.Reflection.AssemblyProductAttribute("CustomAth")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CustomAth")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -34,6 +34,35 @@ namespace CustomAth.Migrations
                     b.ToTable("Category");
                 });
 
+            modelBuilder.Entity("CustomAth.Models.LigneTicket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("NomProduit")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("PrixTotal")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<decimal>("PrixUnitaire")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<int>("Quantite")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TicketId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("LigneTickets");
+                });
+
             modelBuilder.Entity("CustomAth.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -75,6 +104,23 @@ namespace CustomAth.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("CustomAth.Models.Ticket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tickets");
                 });
 
             modelBuilder.Entity("CustomAth.Models.UserAccount", b =>
@@ -127,6 +173,17 @@ namespace CustomAth.Migrations
                     b.ToTable("UserAccounts");
                 });
 
+            modelBuilder.Entity("CustomAth.Models.LigneTicket", b =>
+                {
+                    b.HasOne("CustomAth.Models.Ticket", "Ticket")
+                        .WithMany("Lignes")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ticket");
+                });
+
             modelBuilder.Entity("CustomAth.Models.Product", b =>
                 {
                     b.HasOne("CustomAth.Models.Category", "Category")
@@ -157,6 +214,11 @@ namespace CustomAth.Migrations
             modelBuilder.Entity("CustomAth.Models.Role", b =>
                 {
                     b.Navigation("UserAccounts");
+                });
+
+            modelBuilder.Entity("CustomAth.Models.Ticket", b =>
+                {
+                    b.Navigation("Lignes");
                 });
 #pragma warning restore 612, 618
         }

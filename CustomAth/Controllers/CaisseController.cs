@@ -1,5 +1,6 @@
 using CustomAth.Models;
 using CustomAth.Services;
+using DinkToPdf;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomAth.Controllers;
@@ -73,8 +74,8 @@ public class CaisseController : Controller
         _context.Tickets.Add(ticket);
         _context.SaveChanges();
 
-        string html = await _razorViewToStringRenderer.RenderViewToStringAsync("TicketPDF", ticket);
-        var pdf = PdfGenerator.GeneratePdf(html, PageSize.A4);
+        string html = await _razorViewToStringRenderer.RenderViewToStringAsync("Caisse/TicketPDF", ticket);
+        var pdf = PdfGenerator.GeneratePdf(html, PaperKind.A4);
 
         return File(pdf, "application/pdf", "ticket.pdf");
     }

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "+4jUMGm2cFg=",
+  "dgSpecHash": "cpiSBVVX5UY=",
   "success": true,
   "projectFilePath": "/home/yassine-hammi/RiderProjects/CustomAth/CustomAth/CustomAth.csproj",
   "expectedPackageFiles": [
     "/home/yassine-hammi/.nuget/packages/aspire.microsoft.entityframeworkcore.sqlserver/8.2.2/aspire.microsoft.entityframeworkcore.sqlserver.8.2.2.nupkg.sha512",
     "/home/yassine-hammi/.nuget/packages/azure.core/1.44.1/azure.core.1.44.1.nupkg.sha512",
     "/home/yassine-hammi/.nuget/packages/azure.identity/1.12.0/azure.identity.1.12.0.nupkg.sha512",
+    "/home/yassine-hammi/.nuget/packages/dinktopdf/1.0.8/dinktopdf.1.0.8.nupkg.sha512",
     "/home/yassine-hammi/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/yassine-hammi/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "/home/yassine-hammi/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.3/microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
@@ -157,6 +158,7 @@
     "/home/yassine-hammi/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512",
     "/home/yassine-hammi/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/home/yassine-hammi/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "/home/yassine-hammi/.nuget/packages/system.threading.thread/4.0.0/system.threading.thread.4.0.0.nupkg.sha512",
     "/home/yassine-hammi/.nuget/packages/system.threading.timer/4.3.0/system.threading.timer.4.3.0.nupkg.sha512",
     "/home/yassine-hammi/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/home/yassine-hammi/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512"
