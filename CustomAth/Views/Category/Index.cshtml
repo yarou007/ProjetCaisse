@@ -1,0 +1,46 @@
+@model IEnumerable<CustomAth.Models.Category>
+
+@{
+    ViewData["Title"] = "Category";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" asp-controller="Product">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            </td>
+            <td>
+
+                <form asp-controller="Product" asp-action="Delete" method="post" style="display:inline;">
+                    <input type="hidden" name="Id" value="@item.Id" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>           
+                </td>
+        </tr>
+    }
+    </tbody>
+</table>

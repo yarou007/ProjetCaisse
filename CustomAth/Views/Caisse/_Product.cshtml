@@ -1,0 +1,15 @@
+@using System.Text.Json
+@model IEnumerable<CustomAth.Models.Product>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-4 mb-2">
+            <button class="btn btn-outline-secondary m-2"
+                    onclick='addToTicket(@Html.Raw(JsonSerializer.Serialize(product.ProductName)), @product.ProductUnitPrice.ToString(System.Globalization.CultureInfo.InvariantCulture))'>
+                @product.ProductName
+            </button>
+
+        </div>
+    }
+</div>

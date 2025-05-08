@@ -1,0 +1,10 @@
+
+@model IEnumerable<CustomAth.Models.Category>
+
+@foreach (var category in Model)
+{
+    <button class="btn btn-outline-success mb-2 w-100"
+            onclick="loadProducts(@category.Id)">
+            @category.CategoryName
+    </button>
+}

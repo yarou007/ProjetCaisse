@@ -1,0 +1,88 @@
+<h5 class="text-center">Caisse</h5>
+<p><strong>Date :</strong> @DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")</p>
+<p><strong>Détails Ticket</strong></p>
+<table class="table table-sm table-bordered">
+    <thead>
+    <tr>
+        <th>Qte</th>
+        <th>Nom</th>
+        <th>P.U</th>
+        <th>P.T</th>
+        <th>Action</th>
+
+    </tr>
+    </thead>
+    <tbody id="ticketBody">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+<p><strong>Total :</strong> <span id="ticketTotal"></span> DT</p>
+
+<button class="btn btn-success w-100" onclick="Encaisser()">Encaisser</button>
+<button class="btn btn-danger w-100 mt-2" onclick="resetTicket()">Réinitialiser</button>
+
+
+<div class="row" style="margin-top:10px;">
+    <div class="col-6 text-center">
+        <a href="">
+            <i style="font-size: 2.2rem; color : rgba(128, 128, 128, 0.719);" class="bi bi-cash"></i>
+        </a>
+        <br>
+        <p style="color : rgba(128, 128, 128, 0.719);font-weight: 600;">Espéces</p>
+    </div>
+    <div class="col-6 text-center">
+        <a href="">
+            <i style="font-size: 2.2rem; color : rgba(128, 128, 128, 0.719);" class="bi bi-credit-card"></i>
+        </a>
+        <br> 
+
+        <p style="color : rgba(128, 128, 128, 0.719);font-weight: 600;">Carte bancaire</p>
+
+    </div>
+</div>
+<script>
+    function resetTicket() {
+        fetch('/Caisse/Annuler')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById("ticketZone").innerHTML = html;
+            });
+    }
+
+    function encaisser() {
+        const lignes = document.querySelectorAll("#ticketBody tr");
+        let produits = [];
+
+        lignes.forEach(row => {
+            const qte = parseInt(row.cells[0].textContent);
+            const nom = row.cells[1].textContent;
+            const pu = parseFloat(row.cells[2].textContent);
+            const pt = parseFloat(row.cells[3].textContent);
+
+            if (!isNaN(qte) && nom) {
+                produits.push({ nom, qte, pu, pt });
+            }
+        });
+
+        fetch("/Caisse/Encaisser", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(produits)
+        })
+            .then(res => res.blob()) // PDF response
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                window.open(url); // ouvre le PDF
+                resetTicket(); // vide le ticket après impression
+            });
+    }
+
+
+</script>
