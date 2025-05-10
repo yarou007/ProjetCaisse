@@ -1,0 +1,89 @@
+@* Dashboard.cshtml *@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Tableau de bord</h2>
+
+    <!-- Statistiques normal -->
+    <div class="row text-center mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Ventes du jour</h5>
+                    <p class="card-text">@ViewBag.SalesToday DT</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Tickets émis</h5>
+                    <p class="card-text">@ViewBag.TicketsCount</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-info mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Produits en stock</h5>
+                    <p class="card-text">@ViewBag.TotalProducts</p>
+                </div>
+            </div>
+        </div>    
+        <div class="col-md-3">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Stock faible</h5>
+                    <p class="card-text">@ViewBag.LowStockCount produits</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Produits les plus vendus -->
+    <h4>Top 3 produits</h4>
+    <table class="table table-sm table-bordered">
+        <thead  class="table-light">
+        <tr>
+            <th class="w-50"> Produit</th>
+            <th class="w-50">Quantité Vendus</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in ViewBag.mostSoldProduct)
+        {
+            <tr>
+                <td>@p.NomProduit</td>
+                <td>@p.TotalQuantity</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <!-- Produits en stock faible -->
+    <h4>Produits à stock critique</h4>
+    <table class="table table-sm table-bordered">
+        <thead  class="table-light">
+        <tr>
+            <th class="w-50">Produit</th>
+            <th class="w-50">Quantité Resteés</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in ViewBag.LowStockProducts)
+        {
+            <tr>
+                <td >@p.ProductName</td>
+                <td>@p.ProductQuantity</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+
+
+

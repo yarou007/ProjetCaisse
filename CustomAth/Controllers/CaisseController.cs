@@ -19,7 +19,7 @@ public class CaisseController : Controller
 
     public IActionResult Index()
     {
-        var categories = _context.Category.ToList(); // ✅ respecte le nom exact que TU as mis
+        var categories = _context.Category.ToList(); 
         return View(categories); // hedhe l vue li mbaad shyet9asem en 3 partie 
     }
     
@@ -32,7 +32,7 @@ public class CaisseController : Controller
     public IActionResult GetProductsByCategory(int categoryId)
     {
         var products = _context.Product
-            .Where(p => p.CategoryId == categoryId)
+            .Where(p => p.CategoryId == categoryId && p.ProductQuantity > 0)
             .ToList();
 
         return PartialView("_Product", products);

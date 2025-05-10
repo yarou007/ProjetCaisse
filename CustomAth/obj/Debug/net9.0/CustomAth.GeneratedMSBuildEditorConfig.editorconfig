@@ -72,6 +72,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcnkvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/yassine-hammi/RiderProjects/CustomAth/CustomAth/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGFzaGJvYXJkL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/yassine-hammi/RiderProjects/CustomAth/CustomAth/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -102,6 +106,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/home/yassine-hammi/RiderProjects/CustomAth/CustomAth/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/yassine-hammi/RiderProjects/CustomAth/CustomAth/Views/Ventes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVudGVzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/yassine-hammi/RiderProjects/CustomAth/CustomAth/Views/Ventes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVudGVzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/yassine-hammi/RiderProjects/CustomAth/CustomAth/Views/_ViewImports.cshtml]

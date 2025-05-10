@@ -88,7 +88,7 @@ public class AccountController : Controller
                     // mrigla behs ncreatiw cookie
                     var claims = new List<Claim>
                     {
-                        new Claim(ClaimTypes.Name, userAccount.Email),
+                        new Claim(ClaimTypes.Name, userAccount.FirstName),
                         new Claim("Name", userAccount.FirstName),
                         new Claim(ClaimTypes.Role, userAccount.Role.Name) // Ajouter le rôle
                     };

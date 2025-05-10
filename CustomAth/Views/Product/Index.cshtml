@@ -4,7 +4,7 @@
     ViewData["Title"] = "Products lists";
 }
 
-<h1>Index</h1>
+<h1>Products</h1>
 
 <p>
     <a asp-action="Create" asp-controller="Product">Create New</a>
@@ -25,7 +25,9 @@
         <th>
             @Html.DisplayNameFor(model => model.ProductUnitPrice)
         </th>
-   
+        <th colspan="2">
+            Action
+        </th>
         </tr>
     </thead>
     <tbody>

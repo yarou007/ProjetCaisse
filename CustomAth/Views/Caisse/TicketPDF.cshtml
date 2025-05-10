@@ -53,10 +53,10 @@
 <table>
     <thead>
     <tr>
-        <td><strong>Produit</strong></td>
-        <td><strong>Qte</strong></td>
-        <td><strong>P.U</strong></td>
-        <td><strong>P.T</strong></td>
+        <td ><strong>Produit</strong></td>
+        <td style="text-align:center; "><strong>Qte</strong></td>
+        <td style="text-align:center; "><strong>P.U</strong></td>
+        <td style="text-align:center; "><strong>P.T</strong></td>
     </tr>
     </thead>
     <tbody>
@@ -64,9 +64,9 @@
     {
         <tr>
             <td>@ligne.NomProduit</td>
-            <td style="text-align:center;">@ligne.Quantite</td>
-            <td style="text-align:right;">@ligne.PrixUnitaire.ToString("0.000") DT</td>
-            <td style="text-align:right;">@ligne.PrixTotal.ToString("0.000") DT</td>
+            <td style="text-align:center; font-weight: 10;">@ligne.Quantite</td>
+            <td style="text-align:right; font-weight: 10; ">@ligne.PrixUnitaire.ToString("0.000") DT</td>
+            <td style="text-align:right; font-weight: 10;">@ligne.PrixTotal.ToString("0.000") DT</td>
         </tr>
     }
     </tbody>

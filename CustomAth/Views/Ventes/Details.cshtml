@@ -1,0 +1,31 @@
+@model IEnumerable<CustomAth.Models.LigneTicket>
+
+@{
+    ViewData["Title"] = "Ticket";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">ESEN-HAMMI CAFÉ</h2>
+
+    <table class="table table-bordered table-sm text-center">
+        <thead class="table-light">
+        <tr>
+            <th>Produit</th>
+            <th>Qte</th>
+            <th>P.U</th>
+            <th>P.T</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var ligne in Model)
+        {
+            <tr>
+                <td class="text-start">@ligne.NomProduit</td>
+                <td>@ligne.Quantite</td>
+                <td>@ligne.PrixUnitaire.ToString("0.000") DT</td>
+                <td>@ligne.PrixTotal.ToString("0.000") DT</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

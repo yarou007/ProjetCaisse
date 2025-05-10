@@ -2,10 +2,9 @@
 {
     <form asp-controller="Account" asp-action="logout" method="post" id="loginForm" class="navbar">
         <ul>
-            <li>Hello @Context.User.Identity.Name ! </li>
-            <li>
+           @Context.User.Identity.Name
                 <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>
-            </li>
+      
         </ul>
 
     </form>
